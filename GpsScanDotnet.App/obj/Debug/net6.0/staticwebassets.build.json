@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "KG+P81AEFpWLEqaARJNnwE5cjUUtEiMqn/XMD6e/luw=",
+  "Source": "GpsScanDotnet.App",
+  "BasePath": "_content/GpsScanDotnet.App",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

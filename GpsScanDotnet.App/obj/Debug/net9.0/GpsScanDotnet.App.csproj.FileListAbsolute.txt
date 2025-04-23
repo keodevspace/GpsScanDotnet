@@ -1,0 +1,6 @@
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.csproj.AssemblyReference.cache
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.AssemblyInfoInputs.cache
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.AssemblyInfo.cs
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.csproj.CoreCompileInputs.cache
+C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet.App\obj\Debug\net9.0\GpsScanDotnet.App.MvcApplicationPartsAssemblyInfo.cache

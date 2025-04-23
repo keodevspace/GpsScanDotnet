@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Location</title>
+</head>
+<body>
+    <h1>Click the button to send your location</h1>
+    <button id="sendLocation">Send Location</button>
+    <p id="status"></p>
+
+    <script>
+        document.getElementById('sendLocation').addEventListener('click', async () => {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = 'Fetching location...';
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                    const location = {
+                        Latitude: position.coords.latitude,
+                        Longitude: position.coords.longitude,
+                        Accuracy: position.coords.accuracy, // Precisão em metros
+                        Timestamp: new Date().toISOString()
+                    };
+
+                    try {
+                        const response = await fetch('http://localhost:5000/api/location', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(location)
+                        });
+
+                        if (response.ok) {
+                            statusElement.textContent = `Location sent successfully! Accuracy: ${location.Accuracy} meters.`;
+                        } else {
+                            statusElement.textContent = 'Failed to send location.';
+                        }
+                    } catch (error) {
+                        statusElement.textContent = 'Error sending location.';
+                        console.error(error);
+                    }
+                }, (error) => {
+                    statusElement.textContent = 'Error fetching location.';
+                    console.error(error);
+                }, {
+                    enableHighAccuracy: true, // Solicita maior precisão
+                    timeout: 10000, // Tempo limite para obter a localização
+                    maximumAge: 0 // Não usar cache
+                });
+            } else {
+                statusElement.textContent = 'Geolocation is not supported by your browser.';
+            }
+        });
+    </script>
+</body>
+</html>
