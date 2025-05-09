@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GpsScanDotnet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+834f790b7a6ba5dc000c903e7b86e57619971fbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3df9225f83b444279edc1222a30d016c5611bce")]
 [assembly: System.Reflection.AssemblyProductAttribute("GpsScanDotnet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GpsScanDotnet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
