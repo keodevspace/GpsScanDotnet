@@ -28,7 +28,7 @@
           const longitude = position.coords.longitude;
           const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
 
-          fetch('http://localhost:3000/api/send-location', {
+          fetch('/api/send-location', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ latitude, longitude, map_link: mapLink })
