@@ -17,6 +17,7 @@ export default async function handler(req, res) {
         privateKey: process.env.EMAILJS_PRIVATE_KEY
       }
     );
+    console.error('EmailJS error:', error);
     res.status(200).json({ message: 'Email sent!', result });
   } catch (error) {
     console.error('EmailJS error:', error);
