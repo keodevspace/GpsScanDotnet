@@ -28,12 +28,13 @@
           const longitude = position.coords.longitude;
           const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
 
-          emailjs.send("id2", "template_id", {
-            latitude: latitude,
-            longitude: longitude,
-            map_link: mapLink
+          fetch('http://localhost:3000/api/send-location', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ latitude, longitude, map_link: mapLink })
           })
-          .then(() => alert("Email sent!"))
+          .then(response => response.json())
+          .then(data => alert(data.message))
           .catch(() => alert("Error sending email."));
         },
         () => alert("Could not get your location.")
