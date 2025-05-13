@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/nodejs';
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -7,20 +7,26 @@ export default async function handler(req, res) {
 
   const { latitude, longitude, map_link } = req.body;
 
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.SMTP_USER, 
+      pass: process.env.SMTP_PASS
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.SMTP_USER,
+    to: process.env.SMTP_TO, 
+    subject: 'Location Info',
+    text: `Latitude: ${latitude}\nLongitude: ${longitude}\nMap: ${map_link}`
+  };
+
   try {
-    const result = await emailjs.send(
-      process.env.EMAILJS_SERVICE_ID,
-      process.env.EMAILJS_TEMPLATE_ID,
-      { latitude, longitude, map_link },
-      {
-        publicKey: process.env.EMAILJS_PUBLIC_KEY,
-        privateKey: process.env.EMAILJS_PRIVATE_KEY
-      }
-    );
-    console.error('EmailJS error:', error);
-    res.status(200).json({ message: 'Email sent!', result });
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email sent!' });
   } catch (error) {
-    console.error('EmailJS error:', error);
+    console.error('Nodemailer error:', error);
     res.status(500).json({ message: 'Error sending email.', error });
   }
 }
