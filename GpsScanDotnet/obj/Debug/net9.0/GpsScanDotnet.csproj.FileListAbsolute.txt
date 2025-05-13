@@ -1,8 +1,0 @@
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.AssemblyInfoInputs.cache
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.AssemblyInfo.cs
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.csproj.CoreCompileInputs.cache
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.RazorAssemblyInfo.cache
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.RazorAssemblyInfo.cs
-C:\Users\keoxc.000\source\repos\GpsScanDotnet\GpsScanDotnet\obj\Debug\net9.0\GpsScanDotnet.sourcelink.json
